@@ -1,6 +1,7 @@
 """
 Author: Mark Xu
 
+A simple multichannel signal preprocessor using the Strategy Pattern.
 """
 
 from abc import ABC, abstractmethod
@@ -48,7 +49,7 @@ class Windower(PreprocessTask):
         """Windows the input data.
 
         Args:
-            data (np.ndarray): Signal data in the shape of (channel, signal)
+            data (np.ndarray): Multichannel signal data
 
 
         Returns:
@@ -112,8 +113,7 @@ class SignalFilter(PreprocessTask):
         """Applies the list of filter on the last axis (inner most) of the data.
 
         Args:
-            data (np.ndarray): Signal data where the last axis is the signal \
-                segments
+            data (np.ndarray): Multichannel signal data
 
         Returns:
             np.ndarray: Filtered signal data
@@ -168,7 +168,7 @@ class TDExtractor(PreprocessTask):
         """Applies the feature methods for feature extraction over the last axis
 
         Args:
-            data (np.ndarray): Signal data
+            data (np.ndarray): Multichannel signal data
 
         Returns:
             np.ndarray: Array of features

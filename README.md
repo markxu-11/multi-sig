@@ -9,14 +9,12 @@ This library provides a modular and extensible framework for preprocessing multi
 - **Digital Filtration**: Add customizable filters, including low-pass, high-pass, band-pass, and notch filters.
 - **Feature Extraction**: Extract features from signal data using time-domain methods.
 - **Task Manager**: Easily manage and chain preprocessing tasks for streamlined processing.
+- **Visualisation**: Visualise signal data using Plotly.
 
 ## Installation
 
-Ensure you have the following dependencies installed:
-- Python 3.x
+Dependencies:
+- Python 3.7 or higher
 - NumPy
 - SciPy
-
-You can install the required libraries using pip:
-```bash
-pip install numpy scipy
+- Plotly: (Optional)

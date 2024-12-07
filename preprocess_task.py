@@ -5,6 +5,7 @@ Author: Mark Xu
 
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
+from typing import List, Tuple, Callable
 from scipy.signal import butter, filtfilt, iirnotch
 import numpy as np
 
@@ -102,7 +103,7 @@ class SignalFilter(PreprocessTask):
         b, a = iirnotch(notch_freq, Q, self.fs)
         self.add_filter((b, a))
 
-    def add_filter(self, filter: tuple[np.ndarray, np.ndarray]) -> None:
+    def add_filter(self, filter: Tuple[np.ndarray, np.ndarray]) -> None:
         """Add custom `ba` filter coefficients
         """
         self.filters.append(filter)
@@ -128,7 +129,7 @@ class TDExtractor(PreprocessTask):
     def __init__(self):
         """Feature extracts the signal.
         """
-        self.feature_methods: list[callable] = []
+        self.feature_methods: List[Callable] = []
         self.vec = []
 
     def add_vectorised_features(self, feature_methods):
@@ -189,7 +190,7 @@ class SignalPreprocessor:
     def __init__(self):
         """Manager class for PreprocessTask
         """
-        self.tasks: list[PreprocessTask] = []
+        self.tasks: List[PreprocessTask] = []
 
     def add_tasks(self, tasks: PreprocessTask):
         """Add tasks to the preprocessor manager. Order matters. 

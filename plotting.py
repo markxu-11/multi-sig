@@ -28,7 +28,7 @@ def create_plot(data: np.ndarray,
         for i, row in enumerate(data, start=1):
             fig.add_trace(go.Scatter(y=row, name=f"Ch{i-1}"), row=i, col=1)
     elif data.ndim == 1:
-        fig = go.Figure().add_trace(go.Scatter(y=data, name=f"Ch{1}"))
+        fig = go.Figure().add_trace(go.Scatter(y=data, name=f"Ch{0}"))
     else:
         raise ValueError("Data dimension is not correct")
     

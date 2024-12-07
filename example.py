@@ -8,6 +8,7 @@ if __name__ == "__main__":
     rng = np.random.default_rng(seed=42)
     arr = rng.random((8, 5000)) * 256 - 128 # random int8 values
 
+    # Plot raw data
     create_plot(arr, y_range=(-128, 127), title="Sample Signal").show()
 
     # Windower object that creates windows with length 50 and overlap of 40
@@ -29,6 +30,6 @@ if __name__ == "__main__":
     pre.setup_tasks() # setup all
     res = pre.process_tasks(arr) # run preprocessing pipeline
     print(res.shape)
-    
-    # visualise feature 0 over all channels
+
+    # Plot feature 0 over all channels
     create_plot(res[:, :, 0], y_range=(0, 127), title="Feature 0").show() 

@@ -1,6 +1,6 @@
-# Signal Preprocessing Library
+# Signal Preprocessing
 
-This library provides a modular and extensible framework for preprocessing multichannel signal data. It includes tools for windowing, digital filtration, and feature extraction, along with a manager class to coordinate these preprocessing tasks.
+This collection of scripts provides a modular and extensible framework for preprocessing multichannel signal data. It includes tools for windowing, digital filtration, and feature extraction, along with a manager class to coordinate these preprocessing tasks.
 
 ## Features
 
